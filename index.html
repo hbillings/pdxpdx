@@ -6,6 +6,7 @@
 
     <style>
       .kitty {width: 100%;}
+      #thumbnails .kitty {opacity: 0.6;}
 
       h1 {font-size: 6em; font-weight: 100;}
       .subhead {font-size: 3em; font-weight: 100; padding-bottom: 60px;}
@@ -64,7 +65,7 @@
       <h1 class="text-center">This is Cronkat!</h1>
       <h3 class="text-center subhead">I'm visiting from Chicago. Nice to be here.</h3>
 
-      <div class="row">
+      <div class="row" id="thumbnails">
         <div class="col-md-3">
           <img class="kitty" src="http://placekitten.com/g/400/300"/>
           <p>Caption information about the photo here.</p>
@@ -106,6 +107,14 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
+    <script type="text/javascript">
+        // This waits for the page to load completely before it activates
+        $(document).ready(function(){
+            $('.kitty').mouseover( function(){
+                $(this).fadeTo("slow", 1);
+            });
+        });
+    </script>
   </body>
 
 </html>
